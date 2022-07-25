@@ -2,14 +2,20 @@
 
 <head>
     <title>weather</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
-    
+
+<div class="weather">
+    <h1>Enter the city name</h1>
     <form action="/" method="post">
-        <label for="cityInput">CityName</label>
+        <label for="cityInput"></label>
+        <div class="inform">
         <input type="text" name="city" placeholder="enter city name">
-         <button type="submit">GetWeather</button>
+         <button type="submit" class="button">GetWeather</button>
+         </div>
     </form>
+</div>
 
 </body>
