@@ -2,7 +2,6 @@
 body{
     margin: 0px;
     padding: 0px;
-    background-image: url("weather.jpg");
     background: rgba(187, 80, 80, 0.1);
 }
 .weather{
@@ -41,6 +40,14 @@ input[type="text"] {
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  .rnd-img{
+    border-radius: 50%;
+  }
+
+  h2{
+    margin-bottom: 5px;
   }
   
 

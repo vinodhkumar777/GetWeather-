@@ -12,7 +12,7 @@ app.get("/",function(req,res){
     res.sendFile(__dirname+"/index.html")
 })
 
-app.post("/",function(req,res){
+app.post("/",function(req,res){//this is the response from the post request made
    
     const city=req.body.city;
     if(city==""){
@@ -22,16 +22,20 @@ app.post("/",function(req,res){
     const apiid="414e0cdd9f5992e5bffa4c1e4c54a245";
     const unit="metric";
     const url="https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid="+apiid+"&units="+unit;
-    https.get(url,function(response){
+    https.get(url,function(response){//this is the response from the API 
         //200 response code is good sign
         response.on("data",function(data){
-            //console.log(data);
+            //console.log(typeof(data));
             const weather=JSON.parse(data);
+           // console.log(typeof(weather));
            // console.log(weather);
             const code=weather.cod;
            // console.log(typeof(code));
             if(code==="404"){
-                return res.send("Please enter a valid city name")
+                 const status_codeURL="https://httpstatusdogs.com/img/404.jpg";
+                 //res.write("Please enter a valid city name");
+                 res.send(`<img src=${status_codeURL}></img>`);
+                 return res.send();
             }
             
             const temperature=weather.main.temp;
